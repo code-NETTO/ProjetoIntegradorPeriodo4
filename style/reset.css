@@ -1,0 +1,45 @@
+@import url("./colors.css");
+
+.bg-primary{
+    background-color: var(--PRIMARY-COLOR) !important;
+}
+
+.bg-secondary{
+    background-color: var(--SECONDARY-COLOR) !important;
+}
+
+.btn-primary{
+    background-color: var(--PRIMARY-COLOR) !important;
+    border-color: var(--PRIMARY-COLOR) !important;
+    box-shadow: var(--BLACK) 1px 1PX 3PX !important;
+
+    color: var(--BLACK);
+}
+
+.btn-primary:active, .btn-primary:focus{
+    background-color: var(--SECONDARY-COLOR) !important;
+    border-color: var(--SECONDARY-COLOR) !important;
+}
+
+.btn-secondary{
+    background-color: var(--SECONDARY-COLOR);
+    border-color: var(--SECONDARY-COLOR);
+    box-shadow: var(--BLACK) 1px 1PX 3PX;
+    
+    color: var(--BLACK);
+    font-weight: 600;
+}
+
+.btn-secondary:hover{
+    background-color: var(--PRIMARY-COLOR);
+    border-color: var(--PRIMARY-COLOR);
+}
+
+.btn-secondary:active{
+    background-color: var(--TERTIARY-COLOR) !important;
+    border-color: var(--TERTIARY-COLOR) !important;
+}
+
+.table-hover th{
+    background-color: var(--DETAIL-PRIMARY-COLOR);
+}

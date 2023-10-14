@@ -1,0 +1,27 @@
+@import url("./colors.css");
+@import url("./reset.css");
+
+.content{
+    height: 90vh;
+}
+.btn-scroll{
+    width: 1vw;
+    background-color: var(--TERTIARY-COLOR);
+}
+
+.btn-scroll:hover, .btn-scroll:active{
+    width: 1vw;
+    background-color: var(--DETAIL-PRIMARY-COLOR) !important;
+}
+
+.btn-scroll:active{
+    opacity: 80%;
+}
+
+#content-dias{
+    min-width: 50px;
+}
+
+#content-dias td{
+    font-size: 20pt;
+}
