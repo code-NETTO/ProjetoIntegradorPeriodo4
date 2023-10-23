@@ -25,3 +25,13 @@
 #content-dias td{
     font-size: 20pt;
 }
+
+.move-to-left{
+    transform: translateX(2rem);
+}
+
+#month, #year{
+    color: var(--WHITE);
+    font-size: 18pt;
+    text-shadow: 0.5px 0.5px 1px var(--BLACK);
+}
