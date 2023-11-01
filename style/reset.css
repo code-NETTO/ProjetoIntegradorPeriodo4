@@ -40,6 +40,14 @@
     border-color: var(--TERTIARY-COLOR) !important;
 }
 
+.text-primary{
+    color: var(--BLACK) !important;
+}
+
+.text-secondary{
+    color: var(--WHITE) !important;
+}
+
 .table-hover th{
     background-color: var(--DETAIL-PRIMARY-COLOR);
 }

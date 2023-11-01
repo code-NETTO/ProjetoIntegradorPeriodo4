@@ -1,6 +1,75 @@
-const tablesData = document.getElementsByTagName("td");
+const dadosTeste = [
+    [
+        {
+            "nome": "Comprar leite",
+            "assunto": "Leite",
+            "categoria": "pessoal",
+            "prioridade": 2,
+            "tempoInicio": "14:00",
+            "tempoFim": "14:30",
+            "notaAdicional": "",
+            "status": ""
+        },
+        {
+            "nome": "Comprar pão",
+            "assunto": "Pão",
+            "categoria": "pessoal",
+            "prioridade": 2,
+            "tempoInicio": "08:00",
+            "tempoFim": "08:15",
+            "notaAdicional": "Pão doce",
+            "status": ""
+        },
+        {
+            "nome": "Estudar para prova",
+            "assunto": "Estudar",
+            "categoria": "academico",
+            "prioridade": 1,
+            "tempoInicio": "09:00",
+            "tempoFim": "11:00",
+            "notaAdicional": "Estudar funções",
+            "status": ""
+        },
+    ],
 
+    [        
+        {
+            "nome": "CCCC",
+            "assunto": "CCCC",
+            "categoria": "trabalho",
+            "prioridade": 1,
+            "tempoInicio": "09:00",
+            "tempoFim": "11:00",
+            "notaAdicional": "Estudar funções",
+            "status": ""
+        },
+        {
+            "nome": "BBBB",
+            "assunto": "BBBB",
+            "categoria": "academico",
+            "prioridade": 1,
+            "tempoInicio": "09:00",
+            "tempoFim": "11:00",
+            "notaAdicional": "Estudar funções",
+            "status": ""
+        },
+        {
+            "nome": "AAAAAA",
+            "assunto": "AAAAA",
+            "categoria": "academico",
+            "prioridade": 1,
+            "tempoInicio": "09:00",
+            "tempoFim": "11:00",
+            "notaAdicional": "Estudar funções",
+            "status": ""
+        }
+    ]
+    
+]
+
+const tablesData = document.getElementsByTagName("td");
 const tableDays = document.getElementById("days");
+
 const btnWeekLeft = document.getElementsByTagName("button")[3];
 const btnWeekRight = document.getElementsByTagName("button")[4];
 
@@ -14,7 +83,6 @@ const Week = {
     },
 
     next(){
-        console.log("Próxima semana");
         date = new Date(date.getFullYear(), date.getMonth(), date.getDate()+7);
         
         for(let i = 0; i < 7; i++){
@@ -25,7 +93,6 @@ const Week = {
     },
 
     last(){
-        console.log("Semana anterior");
         date = new Date(date.getFullYear(), date.getMonth(), date.getDate()-7);
         
         for(let i = 0; i < 7; i++){
@@ -39,7 +106,6 @@ const Week = {
         const month = document.getElementById("month");
         const year = document.getElementById("year");
         const months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
-        const finalDay= date.getDate() + 7;
 
         month.innerHTML = months[date.getMonth()];
         year.innerHTML = date.getFullYear();
@@ -59,14 +125,68 @@ const Week = {
 
 const btnHoursLeft = document.getElementsByTagName("button")[5];
 const btnHoursRight = document.getElementsByTagName("button")[6];
+const headersTasks = document.getElementsByTagName("thead")[1];
+const tableTasks = document.getElementById("tableTasks");
 
-const Hours = {
+const TaskList = {
     next(){
-        console.log("Próximas horas");
+        console.log("Próximas tarefas");
     },
 
     last(){
-        console.log("Horas anteriores");
+        console.log("Tarefas anteriores");
+    },
+
+    creatTaskHTML(task){
+        const subject = document.createElement("p");
+        subject.innerHTML= task.assunto;
+
+        const time = document.createElement("p");
+        time.innerHTML= task.tempoInicio;
+        const content = document.createElement("div");
+        content.appendChild(subject);
+        content.appendChild(time);
+
+        const icon = document.createElement("div");
+        if(task.categoria == "academico"){
+            icon.innerHTML = "A";
+        }else if(task.categoria == "trabalho"){
+            icon.innerHTML = "T";
+        }else{
+            icon.innerHTML = "P";
+        }
+
+        const taskGrup = document.createElement("td");
+        taskGrup.appendChild(icon);
+        taskGrup.appendChild(content);
+
+        return taskGrup;
+    },
+
+    tasksDay(day){
+        return dadosTeste[day];
+    },
+
+    update(){
+        console.log("atualiza tarefas");
+        const headers = document.createElement("tr");
+        headersTasks.appendChild(headers);
+
+        for(let i = 0; i < dadosTeste.length; i++){
+            const row = document.createElement("tr");
+            tableTasks.appendChild(row);
+
+            let tasks = this.tasksDay(i);
+
+            for(let j= 0; j < tasks.length; j++){
+                const header = document.createElement("th");
+                header.innerHTML = "Tarefa " + (j+1).toString();
+                headers.appendChild(header);
+            
+
+                row.appendChild(this.creatTaskHTML(tasks[j]))
+            }
+        }
     }
 }
 
@@ -75,5 +195,7 @@ Week.update(Week.curent());
 btnWeekLeft.addEventListener("click", Week.last);
 btnWeekRight.addEventListener("click", Week.next);
 
-btnHoursLeft.addEventListener("click", Hours.last);
-btnHoursRight.addEventListener("click", Hours.next);
+TaskList.update();
+
+btnHoursLeft.addEventListener("click", TaskList.last);
+btnHoursRight.addEventListener("click", TaskList.next);

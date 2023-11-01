@@ -1,198 +1,102 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link href="./style/style.css" rel="stylesheet">
-    <script defer src="./scripts/index.js"></script>
+    <title>Home</title>
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style/style.css">
 </head>
-<body class="container-fluid p-0 bg-secondary">
-    <header class="p-2 bg-primary d-flex">
-      <div class="text-center w-100">
-        <span id="month" class="px-1">Mes</span>
-        <span id="year" class="px-1">2023</span>
-      </div>
-      <div class="dropdown ms-auto">
-          <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            ...
-          </button>
-          <ul class="dropdown-menu text-center shadow">
-            <li class="my-1"><a class="dropdown-item text-wrap" href="#">Nome de usuário</a></li>
-            <li class="my-1"><a class="dropdown-item text-wrap" href="#">email@exemplo.com</a></li>
-            <li class="my-1 mt-3"><button class="btn btn-secondary">Editar</button></li>
-            <li class="my-1"><button class="btn btn-secondary">Sair</button></li>
-          </ul>
-      </div>
-    </header>
-    <content class="content container-fluid d-flex flex-column justify-content-around align-items-center py-3">
-      <content class="hstack gap-3 justify-content-center w-100">
-        <div class="hstack gap-1 justify-content-center col-2">    
-          <button id="btn-days-left" class="btn btn-secondary btn-scroll h-100"><</button>        
-          <div id="content-dias" class="bg-light p-0 h-100 rounded-3 col-4">
-            <table id="days" class="table table-hover table-bordered border-dark h-100 text-center">
-              <thead>
-                <tr>
-                  <th>Dia</th>
-                </tr>
-              </thead>
-              <tbody>
 
-              </tbody>
-            </table>
-          </div>
-          <button class="btn btn-secondary btn-scroll h-100">></button>
-        </div>
-        <div class="hstack gap-1 justify-content-center col-9">
-          <button id="btn-scroll-left" class="btn btn-secondary btn-scroll h-100"><</button>
-          <div class="bg-info overflow-hidden p-0 w-100 h-100 rounded-3">        
-            <table class="table table-hover table-bordered border-dark w-100 h-100">
-                <thead>
-                  <tr>
-                    <th>00:00</th>
-                    <th>01:00</th>
-                    <th>02:00</th>
-                    <th>03:00</th>
-                    <th>04:00</th>
-                    <th>05:00</th>
-                    <th>06:00</th>
-                    <th>07:00</th>
-                    <th>08:00</th>
-                    <th>09:00</th>
-                    <th>10:00</th>
-                    <th>11:00</th>
-                    <th>12:00</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                </tbody>
-            </table>
-          </div>
-          <button id="btn-scroll-right" class="btn btn-secondary btn-scroll h-100">></button>
-        </div>
-      </content>
-    </content>
+<body>
+    <header>
+        <nav class="navbar bg-body-tertiary bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/img/Plugin icon - 1.png" alt="Logo" width="30" height="24"
+                        class="d-inline-block align-text-top">
+                    Nome Aplicação
+                </a>
+                <button class="navbar-toggler btn-primary" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end bg-primary" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body bg-secondary">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active  text-secondary" aria-current="page" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active  text-secondary" aria-current="page" href="./conta.html">Conta</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active  text-secondary" aria-current="page" href="#">Configuração</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active  text-secondary" aria-current="page" href="#">Sobre</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="h-100 bg-secondary">
+        <section class="h-100">
+            <div class="text-center p-3 fs-1 text-secondary">Mês</div>
+            <div class="container-fluid d-flex justify-content-center align-items-center h-75">
+                <button class="btn mx-2">
+                    <i class="uil uil-arrow-circle-left fs-1 text-secondary"></i>
+                </button>
+                <div class="row">
+                    <div class="card m-2 col bg-primary shadow" style="width: 18rem;">
+                        <div class="py-4">
+                            <h5 class="card-title text-center">Dia 1</h5>
+                        </div>
+                        <ul class="list-group list-group-flush py-2">
+                            <li class="list-group-item list-group-item-action list-group-item-info">Tarefa 1</li>
+                            <li class="list-group-item list-group-item-action list-group-item-info">Tarefa 2</li>
+                            <li class="list-group-item list-group-item-action list-group-item-info">Tarefa 3</li>
+                        </ul>
+                    </div>
+                    <div class="card m-2 col bg-primary shadow" style="width: 18rem;">
+                        <div class="py-4">
+                            <h5 class="card-title text-center">Dia 2</h5>
+                        </div>
+                        <ul class="list-group list-group-flush  py-2">
+                            <li class="list-group-item list-group-item-action list-group-item-info">Tarefa 1</li>
+                        </ul>
+                    </div>
+                    <div class="card m-2 col bg-primary shadow" style="width: 18rem;">
+                        <div class="py-4">
+                            <h5 class="card-title text-center">Dia 3</h5>
+                        </div>
+                        <ul class="list-group list-group-flush  py-2">
+                            <li class="list-group-item list-group-item-action list-group-item-info">Tarefa 1</li>
+                            <li class="list-group-item list-group-item-action list-group-item-info">Tarefa 2</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn mx-2">
+                    <i class="uil uil-arrow-circle-right fs-1 text-secondary"></i>
+                </button>
+            </div>
+        </section>
+    </main>
 </body>
-</html>
+
+</html> 

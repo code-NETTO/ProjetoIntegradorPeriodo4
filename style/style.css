@@ -1,8 +1,8 @@
 @import url("./colors.css");
 @import url("./reset.css");
 
-.content{
-    height: 90vh;
+body{
+    height: 91.25vh;
 }
 .btn-scroll{
     width: 1vw;

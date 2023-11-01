@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\WebApi",
+    "\\WebApi\\WebApi",
+    "\\WebApi\\WebApi\\Repositories",
+    "\\WebApi\\WebApi\\Repositories\\Interfaces"
+  ],
+  "SelectedNode": "\\WebApi\\WebApi\\Repositories\\Interfaces\\ITaskRepository.cs",
+  "PreviewInSolutionExplorer": false
+}
