@@ -3,9 +3,12 @@
     "",
     "\\WebApi",
     "\\WebApi\\WebApi",
+    "\\WebApi\\WebApi\\bin",
+    "\\WebApi\\WebApi\\bin\\Release",
+    "\\WebApi\\WebApi\\Models",
     "\\WebApi\\WebApi\\Repositories",
     "\\WebApi\\WebApi\\Repositories\\Interfaces"
   ],
-  "SelectedNode": "\\WebApi\\WebApi\\Repositories\\Interfaces\\ITaskRepository.cs",
+  "SelectedNode": "\\WebApi\\WebApi\\Models\\Tasks.cs",
   "PreviewInSolutionExplorer": false
 }
