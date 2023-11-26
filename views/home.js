@@ -11,12 +11,12 @@ export default class Home{
     }
 
     _nextDays(){
-        this._currentDate = new Date(this._currentDate.getFullYear(), this._currentDate.getMonth(), this._currentDate.getDate()+3);
+        this._currentDate = new Date(this._currentDate.getFullYear(), this._currentDate.getMonth(), this._currentDate.getDate()+1);
         this._loadDates(this._currentDate);
     }
 
     _previousDays(){
-        this._currentDate = new Date(this._currentDate.getFullYear(), this._currentDate.getMonth(), this._currentDate.getDate()-3);
+        this._currentDate = new Date(this._currentDate.getFullYear(), this._currentDate.getMonth(), this._currentDate.getDate()-1);
         this._loadDates(this._currentDate);
     }
     

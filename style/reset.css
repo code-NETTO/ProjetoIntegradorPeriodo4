@@ -1,5 +1,9 @@
 @import url("./colors.css");
 
+body{
+    height: 91.25vh;
+}
+
 .bg-primary{
     background-color: var(--PRIMARY-COLOR) !important;
 }
@@ -16,7 +20,7 @@
     color: var(--BLACK);
 }
 
-.btn-primary:active, .btn-primary:focus{
+.btn-primary:hover{
     background-color: var(--SECONDARY-COLOR) !important;
     border-color: var(--SECONDARY-COLOR) !important;
 }
