@@ -1,0 +1,11 @@
+@import url(./reset.css);
+
+#content{
+    min-width: 250px !important;
+}
+
+@media (max-width: 1024px) {
+    #content{
+        overflow-y: scroll;
+    }
+}
