@@ -38,6 +38,27 @@ function updateTaskList(card, tasks){
     }
 }
 
+function getPreviousDaysButton(){
+    return document.getElementById("previousDays");
+    
+}
+
+function getNextDaysButton(){
+    return document.getElementById("nextDays");    
+}
+
+function getCards(){
+    return document.getElementsByClassName("card");
+}
+
+function getMonth(){
+    return document.getElementById("month");
+}
+
 export default{
-    updateTaskList
+    updateTaskList,
+    getPreviousDaysButton,
+    getNextDaysButton,
+    getCards,
+    getMonth
 }
