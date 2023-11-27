@@ -51,6 +51,10 @@ function getCards(){
     return document.getElementsByClassName("card");
 }
 
+function getCardTitle(card){
+    return card.querySelector("h4");
+}
+
 function getMonth(){
     return document.getElementById("month");
 }
@@ -60,5 +64,6 @@ export default{
     getPreviousDaysButton,
     getNextDaysButton,
     getCards,
+    getCardTitle,
     getMonth
 }
