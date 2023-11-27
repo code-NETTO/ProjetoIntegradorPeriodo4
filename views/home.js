@@ -6,18 +6,20 @@ export default class Home{
 
     constructor(){
         this.TaskService = new TaskService();
-        this._currentDate = new Date(2023, 10, 1);
+        this._currentDate = new Date();
         this._cards = elements.getCards();
     }
 
     _nextDays(){
-        this._currentDate = new Date(this._currentDate.getFullYear(), this._currentDate.getMonth(), this._currentDate.getDate()+3);
+        this._currentDate = new Date(this._currentDate.getFullYear(), this._currentDate.getMonth(), this._currentDate.getDate()+1);
         this._loadDates(this._currentDate);
+        this._loadTasks();
     }
 
     _previousDays(){
-        this._currentDate = new Date(this._currentDate.getFullYear(), this._currentDate.getMonth(), this._currentDate.getDate()-3);
+        this._currentDate = new Date(this._currentDate.getFullYear(), this._currentDate.getMonth(), this._currentDate.getDate()-1);
         this._loadDates(this._currentDate);
+        this._loadTasks();
     }
     
     _inicializeButtons(){
@@ -30,15 +32,15 @@ export default class Home{
 
         elements.getMonth().innerHTML = months[date.getMonth()];
 
-        this._cards[0].querySelector("h4").innerHTML = date.getDate();
-        this._cards[1].querySelector("h4").innerHTML = new Date( date.getFullYear(), date.getMonth(), date.getDate()+1).getDate();
-        this._cards[2].querySelector("h4").innerHTML = new Date( date.getFullYear(), date.getMonth(), date.getDate()+2).getDate();
+        this._cards[0].querySelector("h4").innerHTML = date.getDate().toLocaleString('pt-BR', {minimumIntegerDigits: 2});
+        this._cards[1].querySelector("h4").innerHTML = new Date( date.getFullYear(), date.getMonth(), date.getDate()+1).getDate().toLocaleString('pt-BR', {minimumIntegerDigits: 2});
+        this._cards[2].querySelector("h4").innerHTML = new Date( date.getFullYear(), date.getMonth(), date.getDate()+2).getDate().toLocaleString('pt-BR', {minimumIntegerDigits: 2});
     }
 
     _loadTasks(){
         this.TaskService.getAll().then(tasks =>{
             for (let i = 0; i < this._cards.length; i++) {                
-                const tasksOfCard = tasks.filter((task) => task.TaskDay == "05/11/2023");
+                const tasksOfCard = tasks.filter((task) => task.TaskDay == elements.getCardTitle(this._cards[i]).innerHTML + "/" + (this._currentDate.getMonth() +1) + "/" + this._currentDate.getFullYear()); //"05/11/2023");
                 elements.updateTaskList( this._cards[i],tasksOfCard)
             }
         })

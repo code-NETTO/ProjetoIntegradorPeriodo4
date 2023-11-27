@@ -1,4 +1,4 @@
-function createTaskHTML(task){
+function _createTaskHTML(task){
     const subject = document.createElement("p");
     subject.innerHTML= task.Description;
     subject.classList.add("my-0");
@@ -30,10 +30,17 @@ function createTaskHTML(task){
     return taskGrup;
 }
 
+function _clearTaskList(taskList){
+    while (taskList.firstChild) {
+        taskList.removeChild(taskList.firstChild);
+      }
+}
+
 function updateTaskList(card, tasks){
     const taskList = card.querySelector("ul");
+    _clearTaskList(taskList);
     for(let i = 0; i < tasks.length; i ++){
-        const task = createTaskHTML(tasks[i]);
+        const task = _createTaskHTML(tasks[i]);
         taskList.appendChild(task);
     }
 }
@@ -51,6 +58,10 @@ function getCards(){
     return document.getElementsByClassName("card");
 }
 
+function getCardTitle(card){
+    return card.querySelector("h4");
+}
+
 function getMonth(){
     return document.getElementById("month");
 }
@@ -60,5 +71,6 @@ export default{
     getPreviousDaysButton,
     getNextDaysButton,
     getCards,
+    getCardTitle,
     getMonth
 }
