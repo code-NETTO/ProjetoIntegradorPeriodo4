@@ -1,6 +1,9 @@
 @import url("./colors.css");
 @import url("./reset.css");
 
+body{
+    height: 91.25vh;
+}
 .btn-scroll{
     width: 1vw;
     background-color: var(--TERTIARY-COLOR);
